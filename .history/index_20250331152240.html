@@ -1,56 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Set character encoding and responsive scaling -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Link to external CSS stylesheet -->
     <link rel="stylesheet" href="style.css" />
+
+    <!-- Page title -->
     <title>Tic Tac Toe</title>
   </head>
+
   <body>
+    <!-- Section for player name input (initial screen) -->
     <div class="section1">
       <header>
         <h1>Tic Tac Toe</h1>
       </header>
 
+      <!-- Card layout for player name inputs -->
       <div class="cardContainer">
         <div class="cardHolder">
+          <!-- Player 1 Card -->
           <div class="player1">
             <img src="gameCard2.png" alt="" />
-            <input type="text" id="player1Name" required" placeholder="Enter
-            Name For X's">
+            <input
+              type="text"
+              id="player1Name"
+              required
+              placeholder="Enter Name For X's"
+            />
           </div>
+
+          <!-- VS Box in between players -->
           <div class="versusBox">
             <h1>VS</h1>
           </div>
 
+          <!-- Player 2 Card -->
           <div class="player2">
             <img src="gameCard1.png" alt="" />
-            <input type="text" id="player2Name" required" placeholder="Enter
-            Name For O's">
+            <input
+              type="text"
+              id="player2Name"
+              required
+              placeholder="Enter Name For O's"
+            />
           </div>
         </div>
       </div>
 
+      <!-- Start button footer -->
       <footer>
         <button id="startBtn">Start</button>
       </footer>
     </div>
 
+    <!-- Section for the actual game (initially hidden) -->
     <div class="section2" style="display: none">
       <div class="headingButtons">
-        <h1>Lets's Play Tic Tac Toe</h1>
+        <h1>Let's Play Tic Tac Toe</h1>
+
+        <!-- Reset and Main Menu buttons -->
         <div class="btns">
           <button id="reset" onclick="resetGame()">Reset Game</button>
-          <button id="reset" onclick="mainMenue()">Main Menu</button>
+          <button id="reset" onclick="mainMenu()">Main Menu</button>
         </div>
       </div>
 
+      <!-- Main game area with player panels and board -->
       <div class="fullContainer">
+        <!-- Player 1 display -->
         <div class="player1">
           <img src="gameCard2.png" alt="" />
           <p id="displayName1"></p>
         </div>
 
+        <!-- 3x3 Tic Tac Toe grid -->
         <div class="gameContainer">
           <div class="cell" data-index="0"></div>
           <div class="cell" data-index="1"></div>
@@ -63,16 +90,20 @@
           <div class="cell" data-index="8"></div>
         </div>
 
+        <!-- Player 2 display -->
         <div class="player2">
           <img src="gameCard1.png" alt="" />
           <p id="displayName2"></p>
         </div>
       </div>
     </div>
+
+    <!-- Footer for game messages (e.g. who wins, draw, next turn) -->
     <div class="msgFooter" style="display: none">
       <p id="message"></p>
     </div>
 
+    <!-- Link to the JavaScript file that handles the game logic -->
     <script src="script.js"></script>
   </body>
 </html>
